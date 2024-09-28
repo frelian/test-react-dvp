@@ -15,10 +15,17 @@ Para instalar dependencias
 Para correr el proyecto
 `yarn dev`
 
+Ejecutar las pruebas
+`yarn test`
+
 
 # Info
 * Aplicación usando React + Vite con yarn (Sept 2024)
 * Framework CSS: Material UI
 * Iconos: Material Icons
+* Se crearon algunos test unitarios
+* Se agrego cobertura de pruebas al 65%
 * Paquetes agregados: axios, @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
+* Paquetes agregados para realizar los test unitarios: jest jest-environment-jsdom, jest-mock, @babel/preset-env, @babel/preset-react, @testing-library/dom, @testing-library/jest-dom, @testing-library/react, @types/jest, babel-jest
+
 

@@ -1,8 +1,9 @@
 import { useState } from 'react';
+
 import { AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography, useMediaQuery } from '@mui/material';
 import { Menu as MenuIcon, PeopleOutline, InfoOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/system';
-import { Link } from 'react-router-dom';  // Importa Link
+import { Link } from 'react-router-dom';
 
 export const SideBar = ({ drawerWidth = 240 }) => {
 
