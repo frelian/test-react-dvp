@@ -4,6 +4,7 @@ import { UserPage } from "../pages/UserPage";
 import { Users } from "../components/Users"
 import { UserLayout } from "../layout/UserLayout"
 import { About } from "../components/About";
+import { NotFound } from "../components/NotFound";
 
 
 export const AppRouter = () => {
@@ -11,10 +12,11 @@ export const AppRouter = () => {
         <Routes>
             <Route path="/" element={<UserPage />} />
 
-            <Route path="/users" element={<UserLayout> <Users /> </UserLayout>} />
+            <Route path="/users" element={<UserLayout><Users /> </UserLayout>} />
             <Route path="/about" element={<UserLayout><About /></UserLayout>} /> 
 
-            <Route path="/*" element={<Navigate to="/" />} />
+            {/* Ruta no encontrada 404 */}
+            <Route path="*" element={<NotFound />} />
         </Routes>
     )
 }
