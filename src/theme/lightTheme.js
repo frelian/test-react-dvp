@@ -1,25 +1,25 @@
 import { createTheme } from '@mui/material';
 import { red } from '@mui/material/colors';
 
-export const blackTheme = createTheme({
+export const lightTheme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: 'light',
         primary: {
-            main: '#232323',
+            main: '#1976d2',
         },
         secondary: {
-            main: '#232323',
+            main: '#B8C9F4FF',
         },
         error: {
             main: red.A400,
         },
         background: {
-            default: '#121212',
-            paper: '#232323',
+            default: '#f5f5f5',
+            paper: '#ffffff',
         },
         text: {
-            primary: '#FFFFFF',
-            secondary: '#B3B3B3',
+            primary: '#000000',
+            secondary: '#333333',
         },
     },
 });

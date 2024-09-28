@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box, CircularProgress, Pagination } from '@mui/material';
+
 import axios from 'axios';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box, CircularProgress, Pagination } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export const Users = () => {
     const [users, setUsers] = useState([]);
@@ -10,10 +12,13 @@ export const Users = () => {
     const [totalPages, setTotalPages] = useState(0);
 
     /**
-     * Número de perfiles por página segun
+     * Número de perfiles por página según
      * https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api?apiVersion=2022-11-28
      */
     const usersPerPage = 3;
+
+     // Consulto el tema actual (black o light)
+    const theme = useTheme();
 
     useEffect(() => {
         const fetchGitHubUsers = async () => {
@@ -36,6 +41,7 @@ export const Users = () => {
         setPage(value);
     };
 
+    // Loader para mostrar mientras se realiza la petición
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
@@ -44,6 +50,7 @@ export const Users = () => {
         );
     }
 
+    // En caso tal que la petición genere errores
     if (error) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
@@ -76,12 +83,22 @@ export const Users = () => {
                                 </TableCell>
                                 <TableCell>{user.login}</TableCell>
                                 <TableCell>
-                                    <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+                                    <a 
+                                        href={user.html_url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{ color: theme.palette.mode === 'dark' ? '#FFFFFF' : '#1E88E5' }}
+                                    >
                                         {user.html_url}
                                     </a>
                                 </TableCell>
                                 <TableCell>
-                                    <a href={user.repos_url} target="_blank" rel="noopener noreferrer">
+                                    <a 
+                                        href={user.repos_url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{ color: theme.palette.mode === 'dark' ? '#FFFFFF' : '#1E88E5' }}
+                                    >
                                         {user.repos_url}
                                     </a>
                                 </TableCell>

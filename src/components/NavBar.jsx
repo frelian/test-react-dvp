@@ -1,30 +1,34 @@
-import { AppBar, Grid2, IconButton, Toolbar, Typography } from '@mui/material';
-import { MenuOutlined } from '@mui/icons-material';
+import { useContext } from 'react';
 
+import { AppBar, IconButton, Toolbar, Typography, Box } from '@mui/material';
+import { LightModeOutlined, DarkModeOutlined } from '@mui/icons-material';
+import { ThemeContext } from '../theme';
 
 export const NavBar = ({ drawerWidth = 240 }) => {
-  return (
-    <AppBar 
-        position='fixed'
-        sx={{ 
-            width: { sm: `calc(100% - ${ drawerWidth }px)` },
-            ml: { sm: `${ drawerWidth }px` }
-         }}
-    >
-        <Toolbar>
-            <IconButton
-                color='inherit'
-                edge="start"
-                sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-                <MenuOutlined />
-            </IconButton>
+    const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
-            <Grid2 container direction='row' justifyContent='space-between' alignItems='center'>
-                <Typography variant='h6' noWrap component='div'> DVP </Typography>
-            </Grid2>
+    return (
+        <AppBar 
+            position='fixed'
+            sx={{ 
+                width: { sm: `calc(100% - ${ drawerWidth }px)` },
+                ml: { sm: `${ drawerWidth }px` },
+                bgcolor: '#232323'
+            }}
+        >
+            <Toolbar>
+                {/* Uso flex para distribuir el contenido */}
+                <Box sx={{ flexGrow: 1 }}>
+                    <Typography variant='h6' noWrap component='div'>
+                        DVP
+                    </Typography>
+                </Box>
 
-        </Toolbar>
-    </AppBar>
-  )
+                {/* Icono de cambio de tema */}
+                <IconButton color='inherit' onClick={toggleTheme}>
+                    {isDarkMode ? <LightModeOutlined /> : <DarkModeOutlined />}
+                </IconButton>
+            </Toolbar>
+        </AppBar>
+    )
 }
