@@ -23,6 +23,10 @@ Ejecutar las pruebas
 * Aplicación usando React + Vite con yarn (Sept 2024)
 * Framework CSS: Material UI
 * Iconos: Material Icons
+* Agregada funcionalidad de darkMode
+* Agregado control en caso que se genere error 403 por multiples peticiones al servidior Github
+* Agregada paginación 
+* Agregado menu responsive aunque la tabla no es response
 * Se crearon algunos test unitarios
 * Se agrego cobertura de pruebas al 65%
 * Paquetes agregados: axios, @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
