@@ -10,16 +10,14 @@ Currently, two official plugins are available:
 ## Scripts
 
 Para instalar dependencias
-
-### `yarn install` o solo `yarn`
+`yarn install` o solo `yarn`
 
 Para correr el proyecto
-
-### `yarn dev`
+`yarn dev`
 
 
 # Info
-* Aplicación usando React + Vite con yarn
+* Aplicación usando React + Vite con yarn (Sept 2024)
 * Framework CSS: Material UI
 * Iconos: Material Icons
 * Paquetes agregados: axios, @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
